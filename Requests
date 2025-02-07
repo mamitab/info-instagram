@@ -1,0 +1,6 @@
+try:
+    r = get('https://www.instagram.com/{}/?__a=1'.format(username), headers=headers, cookies=cookies)
+    r.raise_for_status()  # Raise an error for bad status codes
+except requests.exceptions.TooManyRedirects as e:
+    print("Too many redirects error:", e)
+    # Handle the error here
